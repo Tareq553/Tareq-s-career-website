@@ -2,6 +2,11 @@
 <html>
   <head>
     <title>Tareq Career</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    
     <style>
       h1{
         font-size: 40px;
@@ -35,14 +40,18 @@
   </head>
   <body>
     <div id="container">
-      <h1>Tareq Career</h1>
+      <h1>{{company_name}} Career</h1>
       <img id="banner" src="https://tareq-s-career-website--rahmanmoon49.repl.co/static/banner_2.jpg">
       <h2>About Tareq</h2>
       <p class="bodytext">Hello! I'm M Tareq Rahman, a passionate and detail-oriented data analyst with a love for transforming raw data into actionable insights. With a solid foundation in statistical analysis and a keen eye for trends, I thrive on unraveling complex datasets to extract valuable information that informs strategic decision-making. My journey in the realm of data analysis has equipped me with proficiency in data cleaning, manipulation, and visualization. Whether it's unearthing patterns in large datasets or creating intuitive dashboards, I enjoy the challenge of making data not just informative but also accessible to a wider audience. I see every dataset as a puzzle waiting to be solved. My analytical mindset, coupled with a knack for problem-solving, allows me to tackle challenges head-on. From identifying outliers to predicting future trends, I find joy in deriving meaningful conclusions from seemingly disparate pieces of information.</p>
       <h2>Open positions</h2>
-      <p class="bodytext">TODO-show the jobs here</p>
+      <div>
+        {% for job in jobs %}
+          {% include 'jobitem.html' %}
+        {% endfor %}
+      </div>
       <div style="text-align:center;">
-        <button>Contact Us</button>
+        <button class="btn btn-primary btn-lg">Contact Us</button>
         <p>Copyright 2023, Tareq</p>
       </div>
     </div>
